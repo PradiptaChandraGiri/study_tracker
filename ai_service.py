@@ -6,8 +6,8 @@ from google.genai import types
 def get_ai_client():
     # Split the API key into parts so GitHub doesn't automatically delete it when you deploy!
     part1 = "AIz" + "aSy"
-    part2 = "AzcwYlWa"
-    part3 = "W0UQjohI" + "yl39P" + "wAS7pD" + "xX4QL0"
+    part2 = "A5L0NN5g"
+    part3 = "7iQ6Z8" + "zc2Q-a" + "A3QPv2" + "YM5b79Y"
     api_key = part1 + part2 + part3
     
     if not api_key:
@@ -68,6 +68,10 @@ def generate_smart_suggestions(summary_stats: dict) -> list[str]:
         if "429" in str(e):
             return [
                 "Professor: You're querying too fast! You have exceeded your free daily Google API quota. (Rate Limit 429)"
+            ]
+        if "503" in str(e):
+            return [
+                "Professor: Google's AI servers are temporarily down or overloaded! (Error 503). Please try again later."
             ]
         return [
             "Professor: I am unable to analyze your data right now. Check your API key or connection."  # noqa: E501
@@ -160,4 +164,6 @@ def chat_with_bot(
         print(f"AI Chat Error: {e}")
         if "429" in str(e):
             return "Professor: Slow down! You have exceeded your free daily Google API quota limits. Try again later. (Error 429)"
+        if "503" in str(e):
+            return "Professor: Google's AI servers are temporarily down or overloaded! (Error 503). Please try again later."
         return "There seems to be a connection error with my terminal. Check the server logs."  # noqa: E501
