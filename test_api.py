@@ -3,7 +3,7 @@ from google import genai
 from google.genai import types
 
 def test():
-    key = "AIzaSyDgNbymGqTYK6wZlMI6OBhGPWkfxmmFXxI"
+    key = "AIzaSyCC-u3zlYca1dmmkrMbSB_gWIeyKvSH_zY"
     client = genai.Client(api_key=key)
     try:
         r = client.models.generate_content(model="gemini-2.5-flash", contents="Respond with exactly 'OK' if you receive this.")
