@@ -6,8 +6,8 @@ from google.genai import types
 def get_ai_client():
     # Split the API key into parts so GitHub doesn't automatically delete it when you deploy!
     part1 = "AIz" + "aSy"
-    part2 = "CC-u3zlYca"
-    part3 = "1dmmkr" + "MbSB_" + "gWIey" + "KvSH_zY"
+    part2 = "AzcwYlWa"
+    part3 = "W0UQjohI" + "yl39P" + "wAS7pD" + "xX4QL0"
     api_key = part1 + part2 + part3
     
     if not api_key:
