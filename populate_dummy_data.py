@@ -46,9 +46,9 @@ def populate():
 
     # Add realistic marks
     new_marks = [
-        MarkRecord(u_id, "Computer Networks", 4, "38", "85"),
-        MarkRecord(u_id, "Database Systems", 4, "42", "90"),
-        MarkRecord(u_id, "Web Development", 4, "48", "95")
+        MarkRecord(u_id, "Computer Networks", 4, "24", "O"),
+        MarkRecord(u_id, "Database Systems", 4, "28", "O"),
+        MarkRecord(u_id, "Web Development", 4, "20", "O")
     ]
     
     for m in new_marks:
